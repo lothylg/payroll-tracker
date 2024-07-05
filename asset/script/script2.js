@@ -1,52 +1,50 @@
 // Get a reference to the #add-employees-btn element
+console.log(window.document);
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-const rows = document.querySelector(".card-body").querySelectorAll('th');
-
-
-
-
-//  document.getElementsByClassName("card-body").querySelector('th');
-
+const eeTable_body = document.querySelector("#employee-table");
 
 // Collect employee data
   // TODO: Get user input to create and return an array of employee objects
+  //in this function, I need to get fN, lN, s and loop
+  //put in an array
+const collectEmployees = function(employeesArray=[]) {
+  const firstName = prompt("Employee's first name");
+  const lastName = prompt("Employee's last name");
+  const salary = prompt("What is the employee's salary?");
+  employeesArray.push ({firstName: firstName, lastName: lastName, salary: salary})
+  const again = confirm("ok to add more employees, cancel if no more employees to add");
+    if (again) {
+      return collectEmployees(employeesArray);
+    } else {
 
-const collectEmployees = function(employeesArray = []) {
-  const firstName = prompt("employee's first name");
-  const lastName = prompt("employee's last name");
-  const salary = prompt("employee's salary");
-  employeesArray.push({firstName: firstName, lastName: lastName, salary: salary});
-
-  const addMore = confirm("okay to add more employees, cancel in no more employees");
-  if (addMore === false){
-    console.table(employeesArray)
-    return employeesArray;
+    }
+    console.log(employeesArray);
+    console.log(employeesArray.length);
   }
-    return collectEmployees(employeesArray)   
-  }
-// function insertData(employees=[]) {
-//     const employee = document.querySelector("#employee-table").querySelectorAll("td");
-//     const a = employeesArray[firstName, lastName, salary];
-// for (let i = 1; i < employee.length; i++){
-//     employee[i].children[0].append = a[i-1].firstName
-//     employee[i].children[1].append = a[i-1].lastName
-//     employee[i].children[2].append = a[i-1].salary
-//         }
-//     }
-//     insertData();
-
-
-
+  collectEmployees();
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function(collectEmployees) {
   // TODO: Calculate and display the average salary
-    // const salCol = document.getElementsByID("#salary");
+  //count up the rows
+  //add up the numbers in the third column
+  //math
+  // console.log(collectEmployees);
+  let sum = 0
+  for (let i=0; i < collectEmployees.length; i++){
+    console.log(parseFloat(collectEmployees[i].salary))
+    sum += parseFloat(collectEmployees[i].salary)
+  }
+  console.log(sum)
+  console.log(sum/collectEmployees.length)
+  return sum/collectEmployees.length
+
 
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+
 }
 
 /*
@@ -114,3 +112,14 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
+
+// //display inputted data on the page
+// function insertData() {
+//   eeTable_body.innerHTML="";
+//   const tr = "";
+//   currentArray.forEach(x=>{
+//     tr.appendChild(th(currentArray));
+//   })
+//   insertData();
+// }
