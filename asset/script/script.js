@@ -2,14 +2,9 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const rows = document.querySelector(".card-body").querySelectorAll('th');
 
-
-
-
-//  document.getElementsByClassName("card-body").querySelector('th');
-
-
 // Collect employee data
   // TODO: Get user input to create and return an array of employee objects
+
 
 const collectEmployees = function(employeesArray = []) {
   const firstName = prompt("employee's first name");
@@ -24,29 +19,39 @@ const collectEmployees = function(employeesArray = []) {
   }
     return collectEmployees(employeesArray)   
   }
-// function insertData(employees=[]) {
-//     const employee = document.querySelector("#employee-table").querySelectorAll("td");
-//     const a = employeesArray[firstName, lastName, salary];
-// for (let i = 1; i < employee.length; i++){
-//     employee[i].children[0].append = a[i-1].firstName
-//     employee[i].children[1].append = a[i-1].lastName
-//     employee[i].children[2].append = a[i-1].salary
-//         }
-//     }
-//     insertData();
-
-
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
     // const salCol = document.getElementsByID("#salary");
+    console.log(employeesArray)
+    let totalSalary = 0;
+    for(let i = 0; i < employeesArray.length; i++) {
+      totalSalary += parseFloat(employeesArray[i].salary);
+
+    }
+    let totalEmployees = employeesArray.length;
+    let averageSalary = totalSalary / employeesArray.length;
+
+    console.log(`The employee average salary between our ${totalEmployees} employees is ${averageSalary}.`)
+
 
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
+  console.table(employeesArray);
+
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  const randomEmployee = employeesArray[randomIndex];
+  console.log(`Congrats to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`)
+  return randomEmployee;
+
+
+
+
   // TODO: Select and display a random employee
+  // console.log(`Congrats to ${firstName} ${lastName}, our random drawing winner! `);
 }
 
 /*
@@ -95,7 +100,7 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employees);
+displayAverageSalary(employees);
 
   console.log('==============================');
 
