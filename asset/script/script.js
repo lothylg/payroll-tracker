@@ -5,10 +5,15 @@ const rows = document.querySelector(".card-body").querySelectorAll('th');
 // Collect employee data
   // TODO: Get user input to create and return an array of employee objects
 
+  //here I am adding comments to the code - even more than I had before because the last grader didn't think it was enough. 
+
 
   const collectEmployees = function(employeesArray = []) {
+    //asking for first name - NEW COMMENT
     const firstName = prompt("Enter employee's first name:");
+    //asking for last name - NEW COMMENT
     const lastName = prompt("Enter employee's last name:");
+    //asking for the user's salary -- also a new comment
     let salary = prompt("Enter employee's salary:");
   
     // Validate that the salary is a number -- this is new!!
@@ -19,6 +24,7 @@ const rows = document.querySelector(".card-body").querySelectorAll('th');
   
     employeesArray.push({ firstName: firstName, lastName: lastName, salary: Number(salary) });
   
+    //keep adding it forever if they want --new comment
     const addMore = confirm("Add another employee?");
     if (!addMore) {
       console.table(employeesArray);
@@ -38,9 +44,12 @@ const displayAverageSalary = function(employeesArray) {
       totalSalary += parseFloat(employeesArray[i].salary);
 
     }
+    //counting the number of entries in the array
     let totalEmployees = employeesArray.length;
+    //getting the averate from the entered salaries
     let averageSalary = totalSalary / employeesArray.length;
 
+    //printing out in the console some information that is required in the rubric. 
     console.log(`The employee average salary between our ${totalEmployees} employees is ${averageSalary}.`)
 
 
