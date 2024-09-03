@@ -13,7 +13,9 @@ Link to the published page: https://lothylg.github.io/payroll-tracker/
 Link to github of this project: https://github.com/lothylg/payroll-tracker
 
 ### screenshots of the application
-![Screen Shot 2024-07-10 at 9 41 58 AM](https://github.com/lothylg/payroll-tracker/assets/171598913/d3d7d00d-fc56-45d1-a323-59474e67a31b)
+
+![Screen Shot 2024-09-02 at 8 58 08 PM](https://github.com/user-attachments/assets/86dd1e4c-d33e-4835-9df2-6b0b2a919e0a)
+![Screen Shot 2024-09-02 at 8 58 22 PM](https://github.com/user-attachments/assets/3c306ec7-224d-4ff1-b44f-74fa058b5334)
 
 
 ### Resources used to help figure things out. 
