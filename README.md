@@ -1,6 +1,22 @@
+## Title
+Javascript employee tracker
+
+### Description
+This applicaiton will allow users to be able to enter in user's first and last name and salary using prompts within the browser. Within the dev console, the user will be able to see the table of employees, an aggregate of salary and chose a random employee
+
+### installation and useage
+No extraordinary installations are required. This application is only operational locally and on github via the deploy
+
+### links to the application and Github
+
 Link to the published page: https://lothylg.github.io/payroll-tracker/
 Link to github of this project: https://github.com/lothylg/payroll-tracker
+
+### screenshots of the application
 ![Screen Shot 2024-07-10 at 9 41 58 AM](https://github.com/lothylg/payroll-tracker/assets/171598913/d3d7d00d-fc56-45d1-a323-59474e67a31b)
+
+
+### Resources used to help figure things out. 
 
 getting math functions: https://www.shecodes.io/athena/15679-how-to-use-data-extracted-from-a-function-outside-of-the-function-in-javascript#:~:text=So%20to%20use%20data%20that's,assign%20it%20to%20a%20variable.
 

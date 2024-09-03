@@ -6,18 +6,26 @@ const rows = document.querySelector(".card-body").querySelectorAll('th');
   // TODO: Get user input to create and return an array of employee objects
 
 
-const collectEmployees = function(employeesArray = []) {
-  const firstName = prompt("employee's first name");
-  const lastName = prompt("employee's last name");
-  const salary = prompt("employee's salary");
-  employeesArray.push({firstName: firstName, lastName: lastName, salary: salary});
-
-  const addMore = confirm("okay to add more employees, cancel in no more employees");
-  if (addMore === false){
-    console.table(employeesArray)
-    return employeesArray;
-  }
-    return collectEmployees(employeesArray)   
+  const collectEmployees = function(employeesArray = []) {
+    const firstName = prompt("Enter employee's first name:");
+    const lastName = prompt("Enter employee's last name:");
+    let salary = prompt("Enter employee's salary:");
+  
+    // Validate that the salary is a number -- this is new!!
+    while (isNaN(salary)) {
+      alert("Please enter a valid number for the salary.");
+      salary = prompt("Enter employee's salary:");
+    }
+  
+    employeesArray.push({ firstName: firstName, lastName: lastName, salary: Number(salary) });
+  
+    const addMore = confirm("Add another employee?");
+    if (!addMore) {
+      console.table(employeesArray);
+      return employeesArray;
+    }
+  
+    return collectEmployees(employeesArray);
   }
 
 // Display the average salary
